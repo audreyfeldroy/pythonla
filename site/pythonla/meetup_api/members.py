@@ -1,7 +1,7 @@
 import json
 import requests
 
-from .settings import API_KEY, GROUP_NAME
+from settings import API_KEY, GROUP_NAME
 
 base_url = "https://api.meetup.com/members.json"
 
