@@ -80,7 +80,7 @@ Install dependencies ::
 
 Run the server ::
 
-   paster server development.ini
+   paster serve development.ini
 
 
 How Pyramid Project was originally created

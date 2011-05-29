@@ -16,9 +16,3 @@ class TestMyView(unittest.TestCase):
     def tearDown(self):
         testing.tearDown()
 
-    def test_it(self):
-        from pythonla.views import my_view
-        request = testing.DummyRequest()
-        info = my_view(request)
-        self.assertEqual(info['root'].name, 'root')
-        self.assertEqual(info['project'], 'pythonla')
