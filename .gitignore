@@ -2,17 +2,17 @@
 *#
 .#*
 *.log
- *.stamp
- *.pyc
- *.pyo
- *.egg
- *.egg-info
- .DS_Store
- data
- Data.fs*
- /.project
- /.pydevproject
- site/_env*
- tools/files/*
+*.stamp
+*.pyc
+*.pyo
+*.egg
+*.egg-info
+.DS_Store
+data
+Data.fs*
+/.project
+/.pydevproject
+site/_env*
+tools/files/*
 docs/_build
 docs/_static
