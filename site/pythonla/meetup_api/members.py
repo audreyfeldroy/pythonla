@@ -1,25 +1,29 @@
 import json
 import requests
 
-from .settings import API_KEY, GROUP_NAME
+import utils
+import settings
 
-base_url = "https://api.meetup.com/members.json"
+url = settings.BASE_URL + 'members.json'
 
-group_name = "lapython"
 get_data = dict(
-    group_urlname=GROUP_NAME,
-    key=API_KEY
-    )
+    group_urlname=settings.GROUP_NAME,
+    key=settings.API_KEY,
+)
 
 def get_members():
-    
-    r = requests.get(base_url, get_data)
+    '''
+    Get a blob of member data and return a recurisve DictObject of the
+    same.
+    '''
+    r = requests.get(url, get_data)
     if r.status_code == 200:
         data = json.loads(r.content)
+        obj = utils.recursive_dictobject(data)
     else:
         raise Exception()
     
-    for member in data['results']:
-        print member['lat'], member['lon']
-        
-get_members()
+    for member in obj.results:
+        print member.name + ":", member.lat, member.lon
+
+    return obj
