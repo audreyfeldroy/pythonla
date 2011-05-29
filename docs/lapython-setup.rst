@@ -69,6 +69,20 @@ Add in yolk for future package management ::
 
    pip install yolk
 
+
+Install Pythonla site and Getting it to run
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Install dependencies ::
+
+   python setup.py develop
+
+
+Run the server ::
+
+   paster server development.ini
+
+
 How Pyramid Project was originally created
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
