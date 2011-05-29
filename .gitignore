@@ -16,3 +16,4 @@ site/_env*
 tools/files/*
 docs/_build
 docs/_static
+site/pythonla.db
