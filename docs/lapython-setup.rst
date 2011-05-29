@@ -2,13 +2,12 @@
 LAPython Setup
 ##############
 
-These instruction will help you to get goin on setting LAPython website on your
-local macine.
+These instruction will help you to get going on setting LAPython website on your local machine.
 
 Getting the source
 ~~~~~~~~~~~~~~~~~~
 
-Checkout git repositor for LAPython project onto your computer. For the sake of
+Checkout git repository for LAPython project onto your computer. For the sake of
 this tutorial we will assume the following path ::
 
    cd ~/code/lapython
@@ -41,7 +40,7 @@ need to specify the path you installed it in (usually /opt) ::
 Create and Enter Virtual Environment for Pharaoh
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now “cd” into the LAPython site/ folder and set up the virtual environment with the folder name containing python interperter type and version. Please note we are also using “distribute” not “setuptools” and setting a VirtualEnv shell prompt to reflect the project and the environment we are in
+Now “cd” into the LAPython site/ folder and set up the virtual environment with the folder name containing python interpreter type and version. Please note we are also using “distribute” not “setuptools” and setting a VirtualEnv shell prompt to reflect the project and the environment we are in::
 
    cd ../../site
    $TMP_MY_PYPATH ../tools/files/virtualenv*/virtualenv.py --no-site-packages --prompt=\(lapython-${TMP_MY_PY_TYPE_AND_VER/_//}\) _env$TMP_MY_PY_TYPE_AND_VER

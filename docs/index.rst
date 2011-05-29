@@ -12,6 +12,8 @@ Contents:
    :maxdepth: 2
 
    contributing
+   team
+   license
 
 Indices and tables
 ==================
