@@ -9,6 +9,7 @@ def main(global_config, **settings):
     engine = engine_from_config(settings, 'sqlalchemy.')
     initialize_sql(engine)
     config = Configurator(settings=settings)
+    config.add_static_view('static', 'pythonla:static')
     config.include('pyramid_jinja2')
     config.add_route('home', '/', view='pythonla.views.my_view',
                                  view_renderer='templates/mytemplate.jinja2')
