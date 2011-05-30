@@ -1,5 +1,7 @@
 # utils.py - Helpers and stuff
 
+import datetime
+
 class DictObject(object):
     """
     Pass it a dict and now it's an object! Great for keeping variables! Subclass
@@ -27,3 +29,15 @@ def recursive_dictobject(input_dict, object_type=DictObject):
         else:
             setattr(top, i, j)
     return top
+
+def make_datetime(datestr):
+    """
+    Returns a datetime object from an epoch time (aka Unix) timestamp. A
+    13-character timestamp is assumed to have milliseconds.
+    """
+    if len(datestr) == 13:
+        timestamp = float(datestr) // 1000 # Ditch milliseconds
+    else:
+        timestamp = float(datestr)
+
+    return datetime.datetime.fromtimestamp(timestamp)
