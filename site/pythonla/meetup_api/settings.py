@@ -7,6 +7,9 @@ API_KEY = "5f29565e357337e6b607b71302b96d"
 # Group being called.
 GROUP_NAME = "lapython"
 
+# Groups that could be called
+GROUP_NAMES = ("lapython","ladjango","socalpython",)
+
 # Fields to reconcile between a member and a group profile.
 RECONCILE_FIELDS = (
     "additional",
