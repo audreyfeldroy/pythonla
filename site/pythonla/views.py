@@ -13,10 +13,11 @@ def home(request):
 
 @view_config(route_name='members', renderer='templates/members.jinja2')
 def members_view(request):
-    members = meetup.get_members()
+    members = meetup.get_full_profiles()
     return {'breadcrumbs': [
             {'item': 'Members', 'caption' : 'Members'}
            ], 'members': members}
+
 
 @view_config(route_name='events', renderer='templates/events.jinja2')
 def events_view(request):
@@ -27,9 +28,9 @@ def events_view(request):
 
 @view_config(route_name='map', renderer='templates/map.jinja2')
 def map_view(request):
-    members = meetup.get_members()
+    members = meetup.get_full_profiles()
     events = meetup.get_events()    
     return {'breadcrumbs': [
             {'item': 'Map', 'caption' : 'Map'}
            ], 'members': members,
-            'events': events}
+            'events': events}           
