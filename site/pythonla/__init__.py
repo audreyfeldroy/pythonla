@@ -14,6 +14,7 @@ def main(global_config, **settings):
     session_factory = session_factory_from_settings(settings)
     set_cache_regions_from_settings(settings)
     config = Configurator(settings=settings)
+    config.add_static_view('static', 'pythonla:static')
     config.include('pyramid_jinja2')
     config.add_route('home', '/', view='pythonla.views.my_view',
                                  view_renderer='templates/mytemplate.jinja2')
