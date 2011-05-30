@@ -34,4 +34,11 @@ def map_view(request):
     return {'breadcrumbs': [
             {'item': 'Map', 'caption' : 'Map'}
            ], 'members': members,
-            'events': events}           
+            'events': events}
+
+@view_config(route_name='projects', renderer='templates/projects.jinja2')
+def projects_view(request):
+    return {'breadcrumbs': [
+            {'item': 'Projects', 'caption' : 'Projects'}
+           ]}
+

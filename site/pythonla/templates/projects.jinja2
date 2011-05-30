@@ -1,0 +1,60 @@
+{% extends "templates/base.jinja2" %}
+{% block title %}Open-Source Projects by the LA Python community{% endblock title %}
+{% block styles %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock styles %}
+{% block content %}
+    <div class="span-24 last">
+        <h1>Projects</h1>
+        <p>Got an idea for a Python project we could collaborate on?  
+        Then suggest a hack session on the mailing list.
+        </p>
+    </div>
+    <div class="span-10 push-1 append-1">
+        <h2>Python Web Client</h2>
+
+        <p>A python implementation of the excellent hurl.it tool.</p>
+
+        <p><a href="https://bitbucket.org/socal.piggies/pwc/">https://bitbucket.org/socal.piggies/pwc/</a></p>
+    </div>
+    <div class="span-10 push-1 append-1 last">
+        <h2>python.la</h2>
+
+        <p>On May 29, 2010, several of us got together to hack on
+        this website and experiment with the Pyramid web framework.
+        </p>
+
+        <ul>
+            <li>Andrew Kou</li>
+            <li>Audrey Roy <audreyr@gmail.com></li>
+            <li>Daniel Greenfeld <pydanny@gmail.com></li>
+            <li>Jathan McCollum</li>
+            <li>Greg K.</li>
+            <li>Michael R.</li>
+        </ul>
+        <p><a href="https://github.com/LAPython/pythonla">https://github.com/LAPython/pythonla</a></p>
+    </div>
+    <div class="span-10 push-1 append-1">
+        <h2>django-la-facebook</h2>
+
+        <p>Dedicated facebook authentication for Django that does it via the 
+        backend and not javascript. Has lots of tests and a trivial-to-setup 
+        test project with working code.</p>
+
+        <p><a href="https://github.com/cartwheelweb/django-la-facebook">https://github.com/cartwheelweb/django-la-facebook</a></p>
+    </div>
+    <div class="span-10 push-1 append-1">
+        <h2>Django Packages / Packaginator</h2>
+
+        <p>Packaginator: The framework for creating package comparison sites 
+        like djangopackages.com and pythonpackages.com.</p>
+        <p>Many of the project contributors, including the project leads, 
+        live in the LA area and get together to work on Packaginator now and
+        then.</p>
+
+        <p><a href="https://github.com/cartwheelweb/packaginator">https://github.com/cartwheelweb/packaginator</a></p>
+    </div>
+{% endblock content %}

@@ -65,6 +65,8 @@ def basic_routes(config):
     config.add_route('events', '/events', view='pythonla.views.events_view')
     # map
     config.add_route('map', '/map', view='pythonla.views.map_view')
+	# projects
+    config.add_route('projects', '/projects', view='pythonla.views.projects_view')
 
 
 def add_renderer_globals(event):
