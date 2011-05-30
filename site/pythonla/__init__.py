@@ -32,4 +32,6 @@ def basic_routes(config):
     config.add_route('members', '/members', view='pythonla.views.members_view')
 	# events
     config.add_route('events', '/events', view='pythonla.views.events_view')
+	# map
+    config.add_route('map', '/map', view='pythonla.views.map_view')
 
