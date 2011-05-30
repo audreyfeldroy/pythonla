@@ -14,11 +14,11 @@
 <body>
     <div class="container">
         <div id="header" class="span-24 prepend-top last">
-            <div id="logo" class="span-3">
-                <img src="static/img/logo.png" alt="LA Python logo: Lights, camera, whitespace!" />
+            <div id="logo" class="span-4">
+                <a href="/"><img src="static/img/logo.png" alt="LA Python logo: Lights, camera, whitespace!" /></a>
                 {% block header %}{% endblock header %}
             </div>
-            <div id="nav" class="span-21 last">
+            <div id="nav" class="span-20 last">
                 <ul id="navigation">
                 {% for item in navigation %}
                     <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
