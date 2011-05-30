@@ -4,10 +4,11 @@
 <head>
     <title>{% block title %}{% endblock title%}</title>
 
-    <link rel="stylesheet" href="static/css/blueprint/screen.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="static/css/blueprint/print.css" type="text/css" media="print">
+    {% print request.static_url('pythonla:static/css/blueprint/screen.css') %}
+    <link rel="stylesheet" href="{{ request.static_url('pythonla:static/css/blueprint/screen.css') }}" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="{{ request.static_url('pythonla:static/css/blueprint/print.css') }}" type="text/css" media="print">
     <!--[if lt IE 8]>
-      <link rel="stylesheet" href="static/css/blueprint/ie.css" type="text/css" media="screen, projection">
+      <link rel="stylesheet" href="{{ request.static_url('pythonla:static/css/blueprint/ie.css') }}" type="text/css" media="screen, projection">
     <![endif]-->
     {% block styles %}{% endblock styles%}
 </head>
@@ -15,7 +16,7 @@
     <div class="container">
         <div id="header" class="span-24 prepend-top last">
             <div id="logo" class="span-4">
-                <a href="/"><img src="static/img/logo.png" alt="LA Python logo: Lights, camera, whitespace!" /></a>
+                <a href="/"><img src="{{ request.static_url('pythonla:static/img/logo.png') }}" alt="LA Python logo: Lights, camera, whitespace!" /></a>
                 {% block header %}{% endblock header %}
             </div>
             <div id="nav" class="span-20 last">
