@@ -88,17 +88,18 @@ class Meetup(object):
         # Create dict of profiles for fast searching
         profiles = {}
         for p in self.get_profiles():
-            profiles[int(p.member_id)] = p
+            profiles[p.member_id] = p
 
         # loop through the group members
         for member in self.get_members():
 
             # get the profile from the profiles dict
-            profile = profiles.get(member.id, None)
+            profile = profiles.get(int(member.id), None)
 
             # If no profile available, add them to unreconciled
             if not profile:
                 self.unreconciled_members.append(profile)
+                print "fail"
                 continue
 
             # loop through the reconcile fields
@@ -112,5 +113,5 @@ class Meetup(object):
 
 if __name__ == "__main__":
     m = Meetup()
-    print m.get_members()[0].bio
-    print len(m.get_profiles())
+    results = m.reconcile_members_profiles()
+    
