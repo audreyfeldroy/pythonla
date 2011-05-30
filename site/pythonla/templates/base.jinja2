@@ -6,6 +6,9 @@
     {% block extrahead %}{% endblock %}
 </head>
 <body>
+<div id="header">
+    <img src="{{ STATIC_URL }}logo.png" alt="LA Python logo: Lights, camera, whitespace!" />
+</div>
 <div id="content">
     {% block content %}
     <p>Basic Jinja2 Template</p>
