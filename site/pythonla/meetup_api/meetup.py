@@ -59,7 +59,7 @@ class Meetup(object):
             
         return self.make_request(url, request_data=REQUEST_DATA)            
 
-    def get_events():
+    def get_events(self):
         """
         Get a blob of events data and return a recurisve DictObject of the same.
         """

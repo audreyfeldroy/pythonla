@@ -13,3 +13,8 @@ def my_view(request):
 def members_view(request):
     members = meetup.get_members()
     return {'members': members}
+
+@view_config(renderer='templates/events.jinja2')
+def events_view(request):
+    events = meetup.get_events()
+    return {'events': events}
