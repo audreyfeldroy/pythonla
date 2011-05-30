@@ -1,19 +1,33 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html lang="en">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>{% block title %}Python LA{% endblock %}</title>
-    {% block extrahead %}{% endblock %}
+    <title>{% block title %}{% endblock title%}</title>
+
+    <link rel="stylesheet" href="main.css" />
+    {% block styles %}{% endblock styles%}
 </head>
 <body>
-<div id="header">
+    <div id="header">
     <img src="{{ STATIC_URL }}logo.png" alt="LA Python logo: Lights, camera, whitespace!" />
-</div>
-<div id="content">
-    {% block content %}
-    <p>Basic Jinja2 Template</p>
-    {% endblock %}
-</div>
+    {% block header %}{% endblock header %}
+    </div>
+
+    <ul id="navigation">
+    {% for item in navigation %}
+        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <div id="content">
+    {% block content %}{% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2011 by <a href="/">you</a>.
+        {% endblock footer %}
+    </div>
 </body>
 </html>
 
