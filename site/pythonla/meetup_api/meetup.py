@@ -24,15 +24,12 @@ class NotJSONContent(Exception):
 class Meetup(object):
     
     def __init__(self):
-        
         # This represents members that don't have profiles in
         #   this group
         self.unreconciled_members = []
 
         # Members that are reconciled
         self.reconciled_members = []
-        
-
     
     def make_request(self, url, request_data):
         """
@@ -113,5 +110,5 @@ class Meetup(object):
 
 if __name__ == "__main__":
     m = Meetup()
-    results = m.reconcile_members_profiles()
+    results = m.get_full_profiles()
     
