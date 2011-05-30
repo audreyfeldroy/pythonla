@@ -78,7 +78,7 @@ class Meetup(object):
 
         return self.make_request(url, request_data=REQUEST_DATA)
         
-    def reconcile_members_profiles(self):
+    def get_full_profiles(self):
         """ profile values are given precedence over member values"""
         
         # resetting these values
