@@ -1,6 +1,6 @@
 {% extends "templates/base.jinja2" %}
-{% block title %}Events{% endblock %}
-{% block content%}
+{% block title %}Events{% endblock title %}
+{% block content %}
     {% for event in events %}
 	<div class="event">
 		<span class="event-name"><a href="{{ event.event_url }}">{{ event.name }}</a></span>
@@ -8,4 +8,4 @@
 		<span class="event-description">{{ event.description }}</span>
 	</div>
     {% endfor %}
-{% endblock %}
+{% endblock content %}

@@ -1,10 +1,10 @@
 {% extends "templates/base.jinja2" %}
-{% block title %}Members{% endblock %}
-{% block content%}
+{% block title %}Members{% endblock title %}
+{% block content %}
     {% for member in members %}
 	<div class="member">
 		<span class="member-name"><a href="{{ member.link }}">{{ member.name }}</a></span>
 		<img class="member-photo" src="{{ member.photo_url }}" alt="">
 	</div>
     {% endfor %}
-{% endblock %}
+{% endblock content %}
