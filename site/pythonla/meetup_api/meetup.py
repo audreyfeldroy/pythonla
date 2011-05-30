@@ -75,7 +75,6 @@ class Meetup(object):
 
         return self.make_request(url, request_data=REQUEST_DATA)
         
-    @settings.CACHE.cache('get_full_profiles_funct', expire=10)
     def get_full_profiles(self):
         """ profile values are given precedence over member values"""
         

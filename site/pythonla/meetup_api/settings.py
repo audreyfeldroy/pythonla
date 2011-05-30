@@ -1,5 +1,3 @@
-from beaker.cache import CacheManager
-from beaker.util import parse_cache_config_options
 
 # The base URL for the meetup API
 BASE_URL = "https://api.meetup.com/"
@@ -29,11 +27,3 @@ RECONCILE_FIELDS = (
     "status",
     "title"
 )
-
-cache_opts = {
-    'cache.type': 'file',
-    'cache.data_dir': '/tmp/cache/data',
-    'cache.lock_dir': '/tmp/cache/lock'
-}
-
-CACHE = CacheManager(**parse_cache_config_options(cache_opts))
