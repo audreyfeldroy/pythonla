@@ -1,10 +1,37 @@
 {% extends "templates/base.jinja2" %}
 {% block title %}Members{% endblock title %}
+{% block styles %}
+<style>
+	.member {
+		padding: 10px;
+	}
+	.member-info-title {
+		font-weight: bold;
+	}
+</style>
+{% endblock styles %}
 {% block content %}
     {% for member in members %}
-	<div class="member">
-		<span class="member-name"><a href="{{ member.link }}">{{ member.name }}</a></span>
-		<img class="member-photo" src="{{ member.photo_url }}" alt="">
-	</div>
+        <div class="member">
+            <div class="member-name">
+                <span class="member-info-title">Name</span>
+                <span class="member-name-text"><a href="{{ member.link }}">{{ member.name }}</a></span>
+            </div>
+            <div class="member-joined">
+                <span class="member-info-title">Joined</span>
+                <span class="member-joined-text">{{ member.joined }}</span>
+            </div>
+            <div class="member-location">
+                <span class="member-info-title">Location</span>
+                <span class="member-location-text">{{ member.city }}, {{ member.state }}</span>
+            </div>
+            <div class="member-bio">
+                <span class="member-info-title">Bio</span>
+                <span class="member-bio-text">{{ member.bio }}</a></span>
+            </div>
+            <div class="member-photo">
+                <img class="member-photo-image" src="{{ member.photo_url }}" alt=""> 
+            </div>
+        </div>
     {% endfor %}
 {% endblock content %}
