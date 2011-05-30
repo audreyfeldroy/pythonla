@@ -11,6 +11,7 @@
 </style>
 {% endblock styles %}
 {% block content %}
+
     {% for member in members %}
         <div class="member">
             <div class="member-name">
@@ -30,7 +31,7 @@
                 <span class="member-bio-text">{{ member.bio }}</a></span>
             </div>
             <div class="member-photo">
-                <img class="member-photo-image" src="{{ member.photo_url }}" alt=""> 
+                <img class="member-photo-image" src="{{ member.photo_url|default('http://img1.meetupstatic.com/114239437613896435797/img/noPhoto_80.gif', true) }}" alt=""> 
             </div>
         </div>
     {% endfor %}

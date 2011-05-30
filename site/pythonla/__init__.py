@@ -32,8 +32,6 @@ def main(global_config, **settings):
     config.set_session_factory(session_factory)
     config.end()
 
-
-
     config.include(basic_routes)
     config.scan()
     return config.make_wsgi_app()

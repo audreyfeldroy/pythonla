@@ -1,11 +1,65 @@
 {% extends "templates/base.jinja2" %}
 {% block title %}Events{% endblock title %}
+{% block styles %}
+<style>
+	.event-info-title,
+	.venue-info-title  {
+		font-weight: bold;
+	}
+	.event {
+		padding: 10px;
+	}
+	.venue {
+		padding: 5px;
+	}
+</style>
+{% endblock styles %}
 {% block content %}
     {% for event in events %}
 	<div class="event">
-		<span class="event-name"><a href="{{ event.event_url }}">{{ event.name }}</a></span>
-		<span class="event-time">{{ event.time }}</span>
-		<span class="event-description">{{ event.description }}</span>
+	    <div class="event-name">
+		<span class="event-info-title">Name</span>
+                <span class="even-name-text"><a href="{{ event.event_url }}">{{ event.name }}</a></span>
+            </div>
+	    <div class="event-organizer">
+		<span class="event-info-title">Organizer</span>
+		<span class="event-organizer-text"><a href="#{{ event.organizer_id }}">{{ event.organizer_name }}</a></span>
+            </div>
+	    <div class="event-time">
+		<span class="event-info-title">Time</span>
+		<span class="event-time-text">{{ event.time }}</span>
+            </div>
+	    <div class="event-description">
+		<span class="event-info-title">Description</span>
+		<span class="event-description-text">{{ event.description|safe }}</span>
+            </div>
+	    {% if event.event_hosts %}
+	    <div class="event-hosts">
+		<span class="event-info-title">Hosts</span>
+		{% for event_host in event.event_hosts %}
+		<div class="event-host">
+			<span class="event-host-text">{{ event_host.member_name }}</span>
+		</div>
+		{% endfor %}
+            </div>
+            {% endif %}
+	    <div class="event-venue">
+		<span class="event-info-title">Venue</span>
+		<div class="venue">
+		    <div class="venue-name">
+		        <span class="venue-info-title">Name</span>
+		        <span class="venue-name-text">{{ event.venue_name }}</span>
+		    </div>
+		    <div class="venue-address">
+		        <span class="venue-info-title">Address</span>
+		        <span class="venue-address-text">{{ event.venue_address1 }} {{ event.venue_city }}, {{ event.venue_city }} {{ event.venue_zip }}</span>
+		    </div>
+		    <div class="venue-map">
+		        <span class="venue-info-title">Map</span>
+		        <span class="venue-map-text"><a href="{{ event.venue_map }}">Click here!</a> (widget coming soon!)</span>
+		    </div>
+		</div>
+	    </div>
 	</div>
     {% endfor %}
 {% endblock content %}
