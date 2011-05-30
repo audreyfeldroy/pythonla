@@ -38,6 +38,7 @@ class Meetup(object):
             # TODO change to custom exception
             # TODO pass in proper message
             raise Exception()
+
         return obj.results        
 
     def get_members(self):
